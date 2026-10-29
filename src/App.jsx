@@ -271,13 +271,12 @@ export default function App() {
       setAprovado(true);
     } else {
       setAprovado(false);
-      alert(`Aproveitamento obtido: ${percentual}%. O aproveitamento mínimo exigido pela NR-1 é de 70%. Reveja os módulos e refaça o teste.`);
+      alert('Aproveitamento: ' + percentual + '%. O mínimo exigido pela NR-1 é 70%. Reveja os módulos e tente novamente.');
     }
   };
 
-  // 1. TELA DO CERTIFICADO OFICIAL
   if (exibirCertificado && salaDeAula) {
-    const codigoValidacao = `SST-${Date.now().toString(36).toUpperCase()}-${aluno.cpf.replace(/\\D/g, '').slice(0, 4)}`;
+    const codigoValidacao = 'SST-' + Date.now().toString(36).toUpperCase();
     const dataAtual = new Date().toLocaleDateString('pt-BR');
 
     return (
@@ -321,7 +320,7 @@ export default function App() {
             portador(a) do CPF sob o nº <strong className="text-slate-900">{aluno.cpf}</strong>, concluiu com êxito em modalidade EAD a formação regulamentar:
           </p>
 
-          <div className="bg-emerald-50/70 border border-emerald-200 p-4 rounded-xl max-w-2xl mx-auto mb-6">
+          <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-xl max-w-2xl mx-auto mb-6">
             <h2 className="text-xl font-black text-emerald-950">{salaDeAula.codigo} — {salaDeAula.titulo}</h2>
             <div className="flex justify-center gap-6 text-xs text-emerald-900 font-semibold mt-2">
               <span>Carga Horária: {salaDeAula.cargaHoraria}</span>
@@ -344,7 +343,7 @@ export default function App() {
             <div className="text-center flex flex-col items-center justify-center">
               <div className="bg-slate-100 p-2 border rounded-lg mb-1">
                 <img 
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=70x70&data=https://danielmartinssilva135.github.io/consultoria-treinamentos-sst/%23valida-${codigoValidacao}`} 
+                  src={'https://api.qrserver.com/v1/create-qr-code/?size=70x70&data=https://danielmartinssilva135.github.io/consultoria-treinamentos-sst/#' + codigoValidacao} 
                   alt="QR Code de Validação" 
                   className="w-16 h-16"
                 />
@@ -358,7 +357,6 @@ export default function App() {
     );
   }
 
-  // 2. TELA DO AMBIENTE VIRTUAL (VÍDEOS OU PROVA)
   if (salaDeAula) {
     const aulaVigente = salaDeAula.aulas[aulaAtual];
 
@@ -384,7 +382,7 @@ export default function App() {
                 <div className="aspect-video bg-black rounded-2xl overflow-hidden border border-slate-800 shadow-2xl relative">
                   <iframe
                     className="w-full h-full"
-                    src={`https://www.youtube-nocookie.com/embed/${aulaVigente.videoId}?rel=0&modestbranding=1`}
+                    src={'https://www.youtube-nocookie.com/embed/' + aulaVigente.videoId + '?rel=0&modestbranding=1'}
                     title={aulaVigente.titulo}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -416,7 +414,7 @@ export default function App() {
                 <div className="border-b border-slate-800 pb-3 flex justify-between items-center">
                   <div>
                     <h2 className="text-lg font-bold text-white">Avaliação de Aprendizagem (NR-1)</h2>
-                    <p className="text-xs text-slate-400">Responda a todas as questões para libertação do certificado (aproveitamento mínimo de 70%).</p>
+                    <p className="text-xs text-slate-400">Responda a todas as questões para liberação do certificado (mínimo 70%).</p>
                   </div>
                   <button 
                     onClick={() => setEmAvaliacao(false)}
@@ -444,7 +442,7 @@ export default function App() {
                           >
                             <input 
                               type="radio"
-                              name={`pergunta-${pergunta.id}`}
+                              name={'pergunta-' + pergunta.id}
                               checked={respostasUsuario[pergunta.id] === oIndex}
                               onChange={() => responderQuestao(pergunta.id, oIndex)}
                               className="accent-emerald-500"
@@ -458,4 +456,224 @@ export default function App() {
                 </div>
 
                 <div className="pt-4 border-t border-slate-800 flex justify-between items-center">
-                  {notaFinal !== null
+                  {notaFinal !== null && (
+                    <span className={`text-xs font-bold ${aprovado ? 'text-emerald-400' : 'text-rose-400'}`}>
+                      Rendimento obtido: {notaFinal}% {aprovado ? '(Aprovado)' : '(Não Atingido)'}
+                    </span>
+                  )}
+                  {!aprovado ? (
+                    <button 
+                      onClick={finalizarAvaliacao}
+                      className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-2.5 rounded-xl text-xs transition"
+                    >
+                      Submeter Respostas e Avaliar
+                    </button>
+                  ) : (
+                    <button 
+                      onClick={() => setExibirCertificado(true)}
+                      className="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-black px-6 py-2.5 rounded-xl text-xs transition shadow-lg shadow-emerald-500/20"
+                    >
+                      Visualizar e Emitir Certificado Válido →
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
+              <h2 className="text-sm font-bold text-white uppercase tracking-wider">Plano de Formação</h2>
+              <div className="space-y-2">
+                {salaDeAula.aulas.map((aula, index) => (
+                  <button
+                    key={aula.id}
+                    onClick={() => {
+                      setAulaAtual(index);
+                      setEmAvaliacao(false);
+                    }}
+                    className={`w-full text-left p-3 rounded-xl border text-xs transition flex justify-between items-center ${
+                      !emAvaliacao && aulaAtual === index 
+                        ? 'bg-emerald-500/10 border-emerald-500 text-emerald-300 font-bold' 
+                        : 'bg-slate-800/40 border-slate-800 text-slate-400 hover:bg-slate-800'
+                    }`}
+                  >
+                    <span>{aula.titulo}</span>
+                    <span className="text-[11px] text-slate-400 ml-2">{aula.duracao}</span>
+                  </button>
+                ))}
+
+                <button
+                  onClick={() => setEmAvaliacao(true)}
+                  className={`w-full text-left p-3 rounded-xl border text-xs transition flex justify-between items-center ${
+                    emAvaliacao 
+                      ? 'bg-emerald-500/10 border-emerald-500 text-emerald-300 font-bold' 
+                      : 'bg-slate-800/40 border-slate-800 text-slate-400 hover:bg-slate-800'
+                  }`}
+                >
+                  <span>Avaliação de Aprendizagem</span>
+                  <span className="text-[11px] text-emerald-400 font-semibold">Obrigatório</span>
+                </button>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-slate-800 text-xs text-slate-400 space-y-1">
+              <p className="text-emerald-400 font-semibold">✔ Rastreabilidade Ativa (NR-1)</p>
+              <p>✔ Carga Horária: {salaDeAula.cargaHoraria}</p>
+              <p>✔ Certificação com QR Code e CREA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+      <header className="border-b border-slate-800 bg-slate-950 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="h-9 w-9 bg-emerald-500 rounded-lg flex items-center justify-center font-bold text-slate-950 text-lg shadow-lg shadow-emerald-500/20">
+              M
+            </div>
+            <div>
+              <span className="font-extrabold text-base tracking-wider text-white">MARTINS</span>
+              <span className="text-emerald-400 font-extrabold text-base">CONSULTORIASST</span>
+            </div>
+          </div>
+          <nav className="flex space-x-4 text-xs font-medium items-center">
+            <a href="#catalogo" className="hover:text-emerald-400 text-slate-300 transition-colors">Treinamentos EAD</a>
+            <a 
+              href="https://wa.me/5581999999999?text=Olá,%20gostaria%20de%20consultoria%20em%20treinamentos%20SST" 
+              target="_blank" 
+              rel="noreferrer"
+              className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-3 py-1.5 rounded-full uppercase tracking-wider transition-all"
+            >
+              Falar com Engenheiro
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <section className="py-12 px-4 bg-slate-950 text-center border-b border-slate-800/80">
+        <div className="max-w-3xl mx-auto space-y-3">
+          <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest px-3 py-1 bg-emerald-950/60 border border-emerald-800 rounded-full inline-block">
+            Normas Regulamentadoras • 100% em Conformidade NR-1
+          </span>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+            Plataforma de Treinamentos em Segurança do Trabalho
+          </h1>
+          <p className="text-slate-400 text-sm">
+            Capacite os colaboradores com ambiente virtual interativo, avaliação com critério de corte e certificados homologados.
+          </p>
+        </div>
+      </section>
+
+      <main id="catalogo" className="flex-1 max-w-7xl mx-auto px-4 py-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {TREINAMENTOS.map((curso) => (
+            <div 
+              key={curso.id} 
+              className="bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 rounded-2xl p-6 flex flex-col justify-between transition-all"
+            >
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded-md">
+                    {curso.codigo}
+                  </span>
+                  <span className="text-xs text-slate-400 font-medium">{curso.cargaHoraria}</span>
+                </div>
+                <h3 className="text-base font-bold text-white leading-snug">{curso.titulo}</h3>
+                <p className="text-slate-400 text-xs leading-relaxed">{curso.descricao}</p>
+                <div className="text-xs font-semibold text-slate-300">
+                  Modalidade: <span className="text-emerald-300">{curso.modalidade}</span>
+                </div>
+              </div>
+
+              <div className="pt-5 mt-5 border-t border-slate-700/50 flex items-center justify-between">
+                <div>
+                  <span className="text-xs text-slate-400 block">Investimento</span>
+                  <span className="text-lg font-bold text-emerald-400">{curso.preco}</span>
+                </div>
+                <button 
+                  onClick={() => iniciarMatricula(curso)}
+                  className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold px-3 py-2 rounded-xl transition-all shadow-md shadow-emerald-500/10"
+                >
+                  Iniciar Matrícula
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </main>
+
+      {cursoAtivo && (
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl">
+            <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+              <h3 className="text-base font-bold text-white">Matrícula no Treinamento</h3>
+              <button 
+                onClick={() => setCursoAtivo(null)}
+                className="text-slate-400 hover:text-white font-bold"
+              >
+                ✕
+              </button>
+            </div>
+            
+            <div className="bg-slate-800/40 p-3 rounded-lg border border-slate-800 flex justify-between items-center text-xs">
+              <span className="font-semibold text-white">{cursoAtivo.titulo}</span>
+              <span className="text-emerald-400 font-bold">{cursoAtivo.preco}</span>
+            </div>
+
+            <form onSubmit={confirmarMatricula} className="space-y-3">
+              <div>
+                <label className="block text-xs text-slate-300 mb-1">Nome Completo (para o Certificado)</label>
+                <input 
+                  type="text" 
+                  required 
+                  value={aluno.nome}
+                  onChange={(e) => setAluno({ ...aluno, nome: e.target.value })}
+                  placeholder="Nome do colaborador" 
+                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+              <div>
+                <label className="block text-xs text-slate-300 mb-1">CPF</label>
+                <input 
+                  type="text" 
+                  required 
+                  value={aluno.cpf}
+                  onChange={(e) => setAluno({ ...aluno, cpf: e.target.value })}
+                  placeholder="000.000.000-00" 
+                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+              <div>
+                <label className="block text-xs text-slate-300 mb-1">E-mail para envio do registro</label>
+                <input 
+                  type="email" 
+                  required 
+                  value={aluno.email}
+                  onChange={(e) => setAluno({ ...aluno, email: e.target.value })}
+                  placeholder="email@empresa.com" 
+                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+
+              <button 
+                type="submit" 
+                className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-2.5 rounded-xl transition-all text-xs mt-2"
+              >
+                Aceder à Sala Virtual EAD →
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+        © 2026 martinsconsultoriasst — Plataforma em Conformidade NR-1.
+      </footer>
+    </div>
+  );
+}
