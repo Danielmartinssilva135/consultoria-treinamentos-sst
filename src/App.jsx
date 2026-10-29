@@ -78,7 +78,12 @@ const TREINAMENTOS = [
       {
         id: 1,
         enunciado: 'O que comprova a conformidade técnica de um EPI no Brasil?',
-        opcoes: ['Apenas a nota fiscal de compra.', 'O Certificado de Aprovação (CA) emitido pelo órgão competente.', 'O selo de garantia da loja revendedora.', 'A cor do material.'],
+        opcoes: [
+          'Apenas a nota fiscal de compra.',
+          'O Certificado de Aprovação (CA) emitido pelo órgão competente.',
+          'O selo de garantia da loja revendedora.',
+          'A cor do material.'
+        ],
         respostaCorreta: 1
       }
     ]
@@ -98,7 +103,12 @@ const TREINAMENTOS = [
       {
         id: 1,
         enunciado: 'Qual é a medida preferencial de controle do risco elétrico?',
-        opcoes: ['Uso isolado de luvas de borracha.', 'Desenergização elétrica prévia e bloqueio seguro.', 'Avisos verbais aos colegas de trabalho.', 'Uso de calçados comuns.'],
+        opcoes: [
+          'Uso isolado de luvas de borracha.',
+          'Desenergização elétrica prévia e bloqueio seguro.',
+          'Avisos verbais aos colegas de trabalho.',
+          'Uso de calçados comuns.'
+        ],
         respostaCorreta: 1
       }
     ]
@@ -111,8 +121,22 @@ const TREINAMENTOS = [
     modalidade: 'Teórico EAD + Prática',
     preco: 'R$ 119,90',
     descricao: 'Normas de segurança para empilhadeiras, pontes rolantes, talhas e operação segura de cargas.',
-    aulas: [{ id: 1, titulo: 'Inspeção Pré-Operacional de Equipamentos de Movimentação', duracao: '20 min', videoId: 'M7lc1UVf-VE' }],
-    perguntas: []
+    aulas: [
+      { id: 1, titulo: 'Inspeção Pré-Operacional de Equipamentos de Movimentação', duracao: '20 min', videoId: 'M7lc1UVf-VE' }
+    ],
+    perguntas: [
+      {
+        id: 1,
+        enunciado: 'Qual é o procedimento obrigatório antes de iniciar a operação de uma empilhadeira?',
+        opcoes: [
+          'Apenas abastecer o veículo no final do turno.',
+          'Realizar o checklist de inspeção pré-operacional diário.',
+          'Aumentar a velocidade para testar os freios em área pública.',
+          'Transportar cargas acima da capacidade nominal indicada.'
+        ],
+        respostaCorreta: 1
+      }
+    ]
   },
   {
     id: 'nr-12',
@@ -122,8 +146,22 @@ const TREINAMENTOS = [
     modalidade: 'Teórico EAD + Prática',
     preco: 'R$ 129,90',
     descricao: 'Princípios fundamentais, proteções coletivas, dispositivos de intertravamento e operação segura.',
-    aulas: [{ id: 1, titulo: 'Proteções Fixas e Dispositivos de Intertravamento', duracao: '25 min', videoId: 'M7lc1UVf-VE' }],
-    perguntas: []
+    aulas: [
+      { id: 1, titulo: 'Proteções Fixas e Dispositivos de Intertravamento', duracao: '25 min', videoId: 'M7lc1UVf-VE' }
+    ],
+    perguntas: [
+      {
+        id: 1,
+        enunciado: 'Em relação aos dispositivos de parada de emergência na NR-12, é correto afirmar:',
+        opcoes: [
+          'Podem ser utilizados como dispositivos de partida habitual.',
+          'Devem ser mantidos travados durante a operação comum.',
+          'Devem ser de fácil acesso, acionáveis sem risco e sinalizados.',
+          'São dispensáveis em linhas com mais de dois operadores.'
+        ],
+        respostaCorreta: 2
+      }
+    ]
   },
   {
     id: 'nr-20',
@@ -133,8 +171,22 @@ const TREINAMENTOS = [
     modalidade: '100% EAD (Básico)',
     preco: 'R$ 119,90',
     descricao: 'Classes de risco, medidas preventivas para inflamáveis, controle de fontes de ignição e emergências.',
-    aulas: [{ id: 1, titulo: 'Propriedades dos Inflamáveis e Fontes de Ignição', duracao: '20 min', videoId: 'M7lc1UVf-VE' }],
-    perguntas: []
+    aulas: [
+      { id: 1, titulo: 'Propriedades dos Inflamáveis e Fontes de Ignição', duracao: '20 min', videoId: 'M7lc1UVf-VE' }
+    ],
+    perguntas: [
+      {
+        id: 1,
+        enunciado: 'O que define o Ponto de Fulgor de um líquido inflamável?',
+        opcoes: [
+          'A temperatura em que o líquido congela.',
+          'A menor temperatura na qual o líquido libera vapores em quantidade suficiente para inflamar na presença de chama.',
+          'A temperatura de ebulição sob pressão ambiente.',
+          'A cor emitida pela combustão total.'
+        ],
+        respostaCorreta: 1
+      }
+    ]
   },
   {
     id: 'nr-35',
@@ -144,8 +196,22 @@ const TREINAMENTOS = [
     modalidade: 'Teórico EAD + Prática',
     preco: 'R$ 89,90',
     descricao: 'Análise de Risco, sistemas de ancoragem, linha de vida, EPIs contra quedas e resgate técnico.',
-    aulas: [{ id: 1, titulo: 'Planejamento, AR, PT e Sistemas Antiqueda', duracao: '25 min', videoId: 'M7lc1UVf-VE' }],
-    perguntas: []
+    aulas: [
+      { id: 1, titulo: 'Planejamento, AR, PT e Sistemas Antiqueda', duracao: '25 min', videoId: 'M7lc1UVf-VE' }
+    ],
+    perguntas: [
+      {
+        id: 1,
+        enunciado: 'Considera-se trabalho em altura toda atividade executada acima de quantos metros do nível inferior?',
+        opcoes: [
+          '1,50 metros.',
+          '2,00 metros, onde haja risco de queda.',
+          '3,50 metros.',
+          '5,00 metros apenas.'
+        ],
+        respostaCorreta: 1
+      }
+    ]
   }
 ];
 
@@ -155,7 +221,6 @@ export default function App() {
   const [aluno, setAluno] = useState({ nome: '', cpf: '', email: '' });
   const [aulaAtual, setAulaAtual] = useState(0);
 
-  // Estados da Avaliação e Certificado
   const [emAvaliacao, setEmAvaliacao] = useState(false);
   const [respostasUsuario, setRespostasUsuario] = useState({});
   const [aprovado, setAprovado] = useState(false);
@@ -182,13 +247,13 @@ export default function App() {
   };
 
   const responderQuestao = (perguntaId, opcaoIndex) => {
-    setRespostasUsuario({ ...respostasUsuario, [perguntaId]: opcaoIndex });
+    setRespostasUsuario((prev) => ({ ...prev, [perguntaId]: opcaoIndex }));
   };
 
   const finalizarAvaliacao = () => {
     const perguntas = salaDeAula.perguntas;
     if (Object.keys(respostasUsuario).length < perguntas.length) {
-      alert('Responda a todas as questões antes de enviar a avaliação.');
+      alert('Responda a todas as questões antes de submeter a avaliação.');
       return;
     }
 
@@ -206,18 +271,18 @@ export default function App() {
       setAprovado(true);
     } else {
       setAprovado(false);
-      alert(`Aproveitamento de ${percentual}%. O aproveitamento mínimo exigido pela NR-1 é de 70%. Revise as aulas e refaça a prova.`);
+      alert(`Aproveitamento obtido: ${percentual}%. O aproveitamento mínimo exigido pela NR-1 é de 70%. Reveja os módulos e refaça o teste.`);
     }
   };
 
-  // TELA DO CERTIFICADO OFICIAL
+  // 1. TELA DO CERTIFICADO OFICIAL
   if (exibirCertificado && salaDeAula) {
-    const codigoValidacao = `SST-${Date.now().toString(36).toUpperCase()}-${aluno.cpf.replace(/\D/g, '').slice(0, 4)}`;
+    const codigoValidacao = `SST-${Date.now().toString(36).toUpperCase()}-${aluno.cpf.replace(/\\D/g, '').slice(0, 4)}`;
     const dataAtual = new Date().toLocaleDateString('pt-BR');
 
     return (
       <div className="min-h-screen bg-slate-900 text-slate-900 p-4 md:p-10 flex flex-col items-center justify-center font-sans">
-        <div className="w-full max-w-4xl flex justify-between items-center mb-6 no-print">
+        <div className="w-full max-w-4xl flex justify-between items-center mb-6">
           <button 
             onClick={() => setExibirCertificado(false)}
             className="text-xs bg-slate-800 text-slate-200 px-4 py-2 rounded-lg border border-slate-700 hover:bg-slate-700 transition"
@@ -228,11 +293,10 @@ export default function App() {
             onClick={() => window.print()}
             className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2 rounded-lg text-xs shadow-lg transition flex items-center gap-2"
           >
-            🖨 Imprimir / Salvar em PDF
+            Imprimir / Guardar em PDF
           </button>
         </div>
 
-        {/* Documento do Certificado */}
         <div className="w-full max-w-4xl bg-white p-8 md:p-12 rounded-xl border-8 border-double border-slate-300 shadow-2xl relative text-center">
           <div className="flex justify-between items-center border-b pb-4 mb-6">
             <div className="text-left">
@@ -254,7 +318,7 @@ export default function App() {
 
           <p className="text-base text-slate-700 leading-relaxed max-w-2xl mx-auto mb-6">
             Certificamos que <strong className="text-slate-950 uppercase font-black underline decoration-emerald-500">{aluno.nome}</strong>, 
-            portador(a) do CPF sob o nº <strong className="text-slate-900">{aluno.cpf}</strong>, concluiu com êxito em modalidade EAD o treinamento de:
+            portador(a) do CPF sob o nº <strong className="text-slate-900">{aluno.cpf}</strong>, concluiu com êxito em modalidade EAD a formação regulamentar:
           </p>
 
           <div className="bg-emerald-50/70 border border-emerald-200 p-4 rounded-xl max-w-2xl mx-auto mb-6">
@@ -262,7 +326,7 @@ export default function App() {
             <div className="flex justify-center gap-6 text-xs text-emerald-900 font-semibold mt-2">
               <span>Carga Horária: {salaDeAula.cargaHoraria}</span>
               <span>•</span>
-              <span>Aproveitamento na Avaliação: {notaFinal}%</span>
+              <span>Aproveitamento: {notaFinal}%</span>
               <span>•</span>
               <span>Data de Conclusão: {dataAtual}</span>
             </div>
@@ -294,7 +358,7 @@ export default function App() {
     );
   }
 
-  // TELA DO AMBIENTE VIRTUAL (AULAS OU AVALIAÇÃO)
+  // 2. TELA DO AMBIENTE VIRTUAL (VÍDEOS OU PROVA)
   if (salaDeAula) {
     const aulaVigente = salaDeAula.aulas[aulaAtual];
 
@@ -316,7 +380,6 @@ export default function App() {
         <div className="flex-1 max-w-7xl mx-auto w-full p-4 md:p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-4">
             {!emAvaliacao ? (
-              // Player de Vídeo
               <>
                 <div className="aspect-video bg-black rounded-2xl overflow-hidden border border-slate-800 shadow-2xl relative">
                   <iframe
@@ -335,4 +398,64 @@ export default function App() {
                     <p className="text-xs text-emerald-400 mt-0.5">{aulaVigente.titulo}</p>
                   </div>
                   <button 
-                    onClick={()
+                    onClick={() => {
+                      if (aulaAtual < salaDeAula.aulas.length - 1) {
+                        setAulaAtual(aulaAtual + 1);
+                      } else {
+                        setEmAvaliacao(true);
+                      }
+                    }}
+                    className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow-lg shadow-emerald-500/20"
+                  >
+                    {aulaAtual < salaDeAula.aulas.length - 1 ? 'Concluir Aula e Avançar →' : 'Iniciar Avaliação Final (Prova) →'}
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div className="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-6">
+                <div className="border-b border-slate-800 pb-3 flex justify-between items-center">
+                  <div>
+                    <h2 className="text-lg font-bold text-white">Avaliação de Aprendizagem (NR-1)</h2>
+                    <p className="text-xs text-slate-400">Responda a todas as questões para libertação do certificado (aproveitamento mínimo de 70%).</p>
+                  </div>
+                  <button 
+                    onClick={() => setEmAvaliacao(false)}
+                    className="text-xs text-slate-400 hover:text-white"
+                  >
+                    ← Rever Aulas
+                  </button>
+                </div>
+
+                <div className="space-y-6">
+                  {salaDeAula.perguntas.map((pergunta, pIndex) => (
+                    <div key={pergunta.id} className="space-y-2">
+                      <p className="text-sm font-semibold text-slate-200">
+                        {pIndex + 1}. {pergunta.enunciado}
+                      </p>
+                      <div className="space-y-1.5">
+                        {pergunta.opcoes.map((opcao, oIndex) => (
+                          <label 
+                            key={oIndex} 
+                            className={`flex items-center gap-3 p-3 rounded-xl border text-xs cursor-pointer transition ${
+                              respostasUsuario[pergunta.id] === oIndex
+                                ? 'bg-emerald-500/10 border-emerald-500 text-emerald-300'
+                                : 'bg-slate-800/40 border-slate-700/60 text-slate-300 hover:bg-slate-800'
+                            }`}
+                          >
+                            <input 
+                              type="radio"
+                              name={`pergunta-${pergunta.id}`}
+                              checked={respostasUsuario[pergunta.id] === oIndex}
+                              onChange={() => responderQuestao(pergunta.id, oIndex)}
+                              className="accent-emerald-500"
+                            />
+                            <span>{opcao}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-4 border-t border-slate-800 flex justify-between items-center">
+                  {notaFinal !== null
