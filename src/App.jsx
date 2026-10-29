@@ -10,9 +10,9 @@ const TREINAMENTOS = [
     preco: 'R$ 89,90',
     descricao: 'Capacitação completa para cipeiros e designados, conforme nova redação da NR-5 e assédio moral/sexual.',
     aulas: [
-      { id: 1, titulo: 'Introdução à NR-05 e Objetivos da CIPA', duracao: '15 min', videoId: 'dQw4w9WgXcQ' },
-      { id: 2, titulo: 'Mapeamento de Riscos e Investigação de Acidentes', duracao: '25 min', videoId: 'dQw4w9WgXcQ' },
-      { id: 3, titulo: 'Prevenção e Combate ao Assédio no Trabalho', duracao: '20 min', videoId: 'dQw4w9WgXcQ' }
+      { id: 1, titulo: 'Introdução à NR-05 e Atribuições da CIPA', duracao: '15 min', videoId: 'M7lc1UVf-VE' },
+      { id: 2, titulo: 'Identificação de Perigos e Mapeamento de Riscos', duracao: '20 min', videoId: 'L_LUpnjgPso' },
+      { id: 3, titulo: 'Medidas de Prevenção e Combate ao Assédio', duracao: '18 min', videoId: 'tgbNymZ7vqY' }
     ]
   },
   {
@@ -24,8 +24,8 @@ const TREINAMENTOS = [
     preco: 'R$ 49,90',
     descricao: 'Orientações sobre uso correto, guarda, higienização, conservação e responsabilidades legais de EPIs.',
     aulas: [
-      { id: 1, titulo: 'Conceito e Classificação dos EPIs', duracao: '20 min', videoId: 'dQw4w9WgXcQ' },
-      { id: 2, titulo: 'Responsabilidades do Empregador e Empregado', duracao: '15 min', videoId: 'dQw4w9WgXcQ' }
+      { id: 1, titulo: 'Conceito, Certificado de Aprovação (CA) e Guarda', duracao: '15 min', videoId: 'M7lc1UVf-VE' },
+      { id: 2, titulo: 'Responsabilidades do Empregador e do Colaborador', duracao: '12 min', videoId: 'L_LUpnjgPso' }
     ]
   },
   {
@@ -37,8 +37,8 @@ const TREINAMENTOS = [
     preco: 'R$ 149,90',
     descricao: 'Prevenção de riscos elétricos, medidas de controle, procedimentos de trabalho e primeiros socorros.',
     aulas: [
-      { id: 1, titulo: 'Riscos em Instalações Elétricas e Choque Elétrico', duracao: '30 min', videoId: 'dQw4w9WgXcQ' },
-      { id: 2, titulo: 'Medidas de Controle: Desenergização e Aterramento', duracao: '35 min', videoId: 'dQw4w9WgXcQ' }
+      { id: 1, titulo: 'Riscos Elétricos: Choque, Arco Elétrico e Queimaduras', duracao: '25 min', videoId: 'M7lc1UVf-VE' },
+      { id: 2, titulo: 'Medidas de Controle do Risco Elétrico', duracao: '30 min', videoId: 'L_LUpnjgPso' }
     ]
   },
   {
@@ -50,8 +50,8 @@ const TREINAMENTOS = [
     preco: 'R$ 119,90',
     descricao: 'Normas de segurança para empilhadeiras, pontes rolantes, talhas e operação segura de cargas.',
     aulas: [
-      { id: 1, titulo: 'Princípios de Estabilidade e Inspeção Pré-Uso', duracao: '20 min', videoId: 'dQw4w9WgXcQ' },
-      { id: 2, titulo: 'Regras de Circulação e Armazenamento', duracao: '25 min', videoId: 'dQw4w9WgXcQ' }
+      { id: 1, titulo: 'Inspeção Pré-Operacional e Estabilidade de Cargas', duracao: '20 min', videoId: 'M7lc1UVf-VE' },
+      { id: 2, titulo: 'Normas de Circulação e Sinalização em Armazéns', duracao: '22 min', videoId: 'L_LUpnjgPso' }
     ]
   },
   {
@@ -63,8 +63,8 @@ const TREINAMENTOS = [
     preco: 'R$ 129,90',
     descricao: 'Princípios fundamentais, proteções coletivas, dispositivos de intertravamento e operação segura.',
     aulas: [
-      { id: 1, titulo: 'Sistemas de Proteção Fixa e Móvel', duracao: '25 min', videoId: 'dQw4w9WgXcQ' },
-      { id: 2, titulo: 'Dispositivos de Parada de Emergência', duracao: '20 min', videoId: 'dQw4w9WgXcQ' }
+      { id: 1, titulo: 'Sistemas de Segurança e Proteções Móveis/Fixas', duracao: '25 min', videoId: 'M7lc1UVf-VE' },
+      { id: 2, titulo: 'Procedimentos de Bloqueio, Etiquetagem e Parada', duracao: '20 min', videoId: 'L_LUpnjgPso' }
     ]
   },
   {
@@ -76,8 +76,8 @@ const TREINAMENTOS = [
     preco: 'R$ 119,90',
     descricao: 'Classes de risco, medidas preventivas para inflamáveis, controle de fontes de ignição e emergências.',
     aulas: [
-      { id: 1, titulo: 'Propriedades dos Inflamáveis e Ponto de Fulgor', duracao: '20 min', videoId: 'dQw4w9WgXcQ' },
-      { id: 2, titulo: 'Controle de Fontes de Ignição e Emergências', duracao: '30 min', videoId: 'dQw4w9WgXcQ' }
+      { id: 1, titulo: 'Características e Classificação de Inflamáveis', duracao: '20 min', videoId: 'M7lc1UVf-VE' },
+      { id: 2, titulo: 'Controle de Fontes de Ignição e Resposta a Derrames', duracao: '25 min', videoId: 'L_LUpnjgPso' }
     ]
   },
   {
@@ -89,8 +89,8 @@ const TREINAMENTOS = [
     preco: 'R$ 89,90',
     descricao: 'Análise de Risco, sistemas de ancoragem, linha de vida, EPIs contra quedas e resgate técnico.',
     aulas: [
-      { id: 1, titulo: 'Planejamento e Análise de Risco (AR/PT)', duracao: '25 min', videoId: 'dQw4w9WgXcQ' },
-      { id: 2, titulo: 'Sistemas de Proteção Contra Quedas (SPCQ)', duracao: '30 min', videoId: 'dQw4w9WgXcQ' }
+      { id: 1, titulo: 'Análise de Risco (AR) e Permissão de Trabalho (PT)', duracao: '25 min', videoId: 'M7lc1UVf-VE' },
+      { id: 2, titulo: 'Sistemas de Proteção Contra Quedas e Inspeção de EPIs', duracao: '30 min', videoId: 'L_LUpnjgPso' }
     ]
   }
 ];
@@ -108,7 +108,7 @@ export default function App() {
   const confirmarAcesso = (e) => {
     e.preventDefault();
     if (!aluno.nome || !aluno.cpf) {
-      alert('Por favor, preencha o Nome e o CPF para emissão da ficha e certificado.');
+      alert('Por favor, indique o Nome e o CPF para emissão da ficha e certificado.');
       return;
     }
     setSalaDeAula(cursoAtivo);
@@ -116,13 +116,15 @@ export default function App() {
     setAulaAtual(0);
   };
 
-  // Se o aluno estiver dentro da sala de aula EAD:
+  // Ambiente Virtual de Aprendizagem (Sala de Aula EAD)
   if (salaDeAula) {
+    const aulaVigente = salaDeAula.aulas[aulaAtual];
+
     return (
       <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
         <header className="bg-slate-900 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
           <div>
-            <span className="text-xs text-emerald-400 font-bold tracking-wider">{salaDeAula.codigo} • AMBIENTE VIRTUAL</span>
+            <span className="text-xs text-emerald-400 font-bold tracking-wider">{salaDeAula.codigo} • SALA VIRTUAL EAD</span>
             <h1 className="text-lg font-bold text-white">{salaDeAula.titulo}</h1>
           </div>
           <button 
@@ -134,66 +136,65 @@ export default function App() {
         </header>
 
         <div className="flex-1 max-w-7xl mx-auto w-full p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Reprodutor de Aula / Conteúdo */}
+          {/* Reprodutor de Vídeo Real Incorporado */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="aspect-video bg-black rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center relative">
-              <div className="text-center p-6 space-y-3">
-                <div className="h-16 w-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
-                  ▶
-                </div>
-                <h3 className="text-lg font-semibold text-white">
-                  Módulo {aulaAtual + 1}: {salaDeAula.aulas[aulaAtual]?.titulo}
-                </h3>
-                <p className="text-xs text-slate-400">
-                  Duração estimada: {salaDeAula.aulas[aulaAtual]?.duracao} • Em conformidade com a NR-1
-                </p>
-              </div>
+            <div className="aspect-video bg-black rounded-2xl overflow-hidden border border-slate-800 shadow-2xl relative">
+              <iframe
+                className="w-full h-full"
+                src={`https://www.youtube-nocookie.com/embed/${aulaVigente.videoId}?rel=0&modestbranding=1`}
+                title={aulaVigente.titulo}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
 
-            <div className="bg-slate-900 p-4 rounded-xl border border-slate-800 flex justify-between items-center">
+            <div className="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
               <div>
                 <p className="text-xs text-slate-400">Aluno Matriculado:</p>
                 <p className="text-sm font-bold text-white">{aluno.nome} ({aluno.cpf})</p>
+                <p className="text-xs text-emerald-400 mt-0.5">Módulo {aulaAtual + 1}: {aulaVigente.titulo}</p>
               </div>
               <button 
                 onClick={() => {
                   if (aulaAtual < salaDeAula.aulas.length - 1) {
                     setAulaAtual(aulaAtual + 1);
                   } else {
-                    alert(`Parabéns, ${aluno.nome}! Você concluiu todos os módulos de ${salaDeAula.codigo}. O certificado com ART/CREA foi gerado.`);
+                    alert(`Parabéns, ${aluno.nome}! Concluiu todos os módulos de ${salaDeAula.codigo}.`);
                   }
                 }}
-                className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs"
+                className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow-lg shadow-emerald-500/20"
               >
-                {aulaAtual < salaDeAula.aulas.length - 1 ? 'Concluir e Ir para Próxima Aula →' : 'Finalizar Treinamento e Emitir Certificado'}
+                {aulaAtual < salaDeAula.aulas.length - 1 ? 'Concluir Aula e Avançar →' : 'Finalizar e Emitir Certificado'}
               </button>
             </div>
           </div>
 
-          {/* Grade de Módulos */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
-            <h2 className="text-sm font-bold text-white uppercase tracking-wider">Conteúdo Programático</h2>
-            <div className="space-y-2">
-              {salaDeAula.aulas.map((aula, index) => (
-                <button
-                  key={aula.id}
-                  onClick={() => setAulaAtual(index)}
-                  className={`w-full text-left p-3 rounded-xl border text-xs transition flex justify-between items-center ${
-                    aulaAtual === index 
-                      ? 'bg-emerald-500/10 border-emerald-500 text-emerald-300 font-bold' 
-                      : 'bg-slate-800/40 border-slate-800 text-slate-400 hover:bg-slate-800'
-                  }`}
-                >
-                  <span>{index + 1}. {aula.titulo}</span>
-                  <span>{aula.duracao}</span>
-                </button>
-              ))}
+          {/* Lista de Aulas do Treinamento */}
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
+              <h2 className="text-sm font-bold text-white uppercase tracking-wider">Conteúdo Programático</h2>
+              <div className="space-y-2">
+                {salaDeAula.aulas.map((aula, index) => (
+                  <button
+                    key={aula.id}
+                    onClick={() => setAulaAtual(index)}
+                    className={`w-full text-left p-3 rounded-xl border text-xs transition flex justify-between items-center ${
+                      aulaAtual === index 
+                        ? 'bg-emerald-500/10 border-emerald-500 text-emerald-300 font-bold shadow-sm' 
+                        : 'bg-slate-800/40 border-slate-800 text-slate-400 hover:bg-slate-800'
+                    }`}
+                  >
+                    <span>{index + 1}. {aula.titulo}</span>
+                    <span className="text-[11px] text-slate-400 ml-2">{aula.duracao}</span>
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-800 text-xs text-slate-500 space-y-1">
+            <div className="pt-4 border-t border-slate-800 text-xs text-slate-400 space-y-1">
+              <p className="text-emerald-400 font-semibold">✔ Validade Jurídica NR-1 (Anexo II)</p>
               <p>✔ Carga Horária: {salaDeAula.cargaHoraria}</p>
-              <p>✔ Registro de Presença Ativo (Log)</p>
-              <p>✔ Responsável Técnico: Eng. de Seg. do Trabalho</p>
+              <p>✔ Rastreamento de Presença Ativo</p>
             </div>
           </div>
         </div>
@@ -201,10 +202,9 @@ export default function App() {
     );
   }
 
-  // Página Inicial de Vendas
+  // Página Inicial / Catálogo
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
-      {/* Topo / Navbar com z-index e posicionamento ajustado */}
       <header className="border-b border-slate-800 bg-slate-950 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-3">
@@ -230,7 +230,6 @@ export default function App() {
         </div>
       </header>
 
-      {/* Hero com espaçamento corrigido */}
       <section className="py-12 px-4 bg-slate-950 text-center border-b border-slate-800/80">
         <div className="max-w-3xl mx-auto space-y-3">
           <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest px-3 py-1 bg-emerald-950/60 border border-emerald-800 rounded-full inline-block">
@@ -240,12 +239,11 @@ export default function App() {
             Plataforma de Treinamentos em Segurança do Trabalho
           </h1>
           <p className="text-slate-400 text-sm">
-            Capacite sua equipe com emissão de certificados válidos em todo o Brasil e homologados por Engenharia de Segurança do Trabalho.
+            Capacite a sua equipa com emissão de certificados válidos em todo o país e homologados por Engenharia de Segurança do Trabalho.
           </p>
         </div>
       </section>
 
-      {/* Grid de Treinamentos */}
       <main id="catalogo" className="flex-1 max-w-7xl mx-auto px-4 py-10 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {TREINAMENTOS.map((curso) => (
@@ -284,7 +282,6 @@ export default function App() {
         </div>
       </main>
 
-      {/* Modal de Matrícula */}
       {cursoAtivo && (
         <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
           <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl">
@@ -342,7 +339,7 @@ export default function App() {
                 type="submit" 
                 className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-2.5 rounded-xl transition-all text-xs mt-2"
               >
-                Acessar Ambiente Virtual de Aprendizagem (EAD) →
+                Aceder à Sala de Aula Virtual (EAD) →
               </button>
             </form>
           </div>
