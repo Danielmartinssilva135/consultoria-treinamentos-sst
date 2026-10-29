@@ -156,7 +156,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Consultoria Especializada em Segurança do Trabalho & Treinamentos</span>
+            <span>MARTINS CONSULTORIA</span>SST</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1"><PhoneCall className="w-3.5 h-3.5" /> (81) 995976579</span>
